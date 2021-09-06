@@ -1,0 +1,6 @@
+E:\shobh\Work_Wellsky\SingletonProofOfConcept\Singleton\bin\Debug\Singleton.dll
+E:\shobh\Work_Wellsky\SingletonProofOfConcept\Singleton\bin\Debug\Singleton.pdb
+E:\shobh\Work_Wellsky\SingletonProofOfConcept\Singleton\obj\Debug\Singleton.btproj.AssemblyReference.cache
+E:\shobh\Work_Wellsky\SingletonProofOfConcept\Singleton\obj\Debug\Singleton.btproj.CoreCompileInputs.cache
+E:\shobh\Work_Wellsky\SingletonProofOfConcept\Singleton\obj\Debug\Singleton.dll
+E:\shobh\Work_Wellsky\SingletonProofOfConcept\Singleton\obj\Debug\Singleton.pdb

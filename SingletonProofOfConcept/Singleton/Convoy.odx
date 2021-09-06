@@ -1,0 +1,333 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="ebb21175-f258-429c-a2fa-f0ffd5a1317a" LowerBound="1.1" HigherBound="87.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="Singleton" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="fc491db1-135d-42c6-af83-236a4b36226b" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_Rcv" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="28f27296-5c7c-40ca-b20f-3b48be08b99d" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="0f80f304-0563-4d8c-bce6-cd6184fae950" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.17">
+                    <om:Property Name="Ref" Value="Singleton.POIn" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="64e94fdd-8591-426a-bea3-17a9cf4114ce" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_SndPO" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="a1b66e65-a7e1-4a7d-8eb5-a822f00207df" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="9f67c323-e179-4b5c-b595-4d9c6971eda3" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.17">
+                    <om:Property Name="Ref" Value="Singleton.POIn" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="CorrelationType" OID="dbb643d5-95b5-4a6c-b397-205f9704d8aa" ParentLink="Module_CorrelationType" LowerBound="18.1" HigherBound="22.1">
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CorrelationTypeRcvPort" />
+            <om:Property Name="Signal" Value="True" />
+            <om:Element Type="PropertyRef" OID="3f4d1ad3-cd1d-47d5-8fc4-f37b0b886a07" ParentLink="CorrelationType_PropertyRef" LowerBound="20.9" HigherBound="20.28">
+                <om:Property Name="Ref" Value="BTS.ReceivePortName" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PropertyRef_1" />
+                <om:Property Name="Signal" Value="False" />
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="10b7bdd5-a89b-4cd9-8059-80744e08c9c4" ParentLink="Module_ServiceDeclaration" LowerBound="22.1" HigherBound="86.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="Convoy" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="CorrelationDeclaration" OID="6a32a49e-4e7a-49d4-8c48-6a8333a21a38" ParentLink="ServiceDeclaration_CorrelationDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="Singleton.CorrelationTypeRcvPort" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CorrelationSet" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="StatementRef" OID="74fd2e2b-96e6-4ec9-9fca-20e6f4fc3f60" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="35.59" HigherBound="35.84">
+                    <om:Property Name="Initializes" Value="True" />
+                    <om:Property Name="Ref" Value="3af22ab9-3d67-49e2-a3cf-f109b25b0270" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_1" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+                <om:Element Type="StatementRef" OID="c2e76a7f-19b7-48aa-9eb5-461ee339091e" ParentLink="CorrelationDeclaration_StatementRef" LowerBound="73.64" HigherBound="73.78">
+                    <om:Property Name="Initializes" Value="False" />
+                    <om:Property Name="Ref" Value="2a4f5302-4d8e-47b2-ba9d-aa601ad526e8" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="StatementRef_2" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="bbfddb06-d5cb-455c-9262-1b4c754c15b9" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="Type" Value="Singleton.POIn" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="e6b68124-1e73-440e-8288-3bdf07963752" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="Type" Value="Singleton.POIn" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MsgOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="915dc366-3428-4c93-8e3b-7a2663299b82" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="3af22ab9-3d67-49e2-a3cf-f109b25b0270" ParentLink="ServiceBody_Statement" LowerBound="34.1" HigherBound="36.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="PortRcv" />
+                    <om:Property Name="MessageName" Value="MsgIn" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceivePOIn" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="While" OID="41169341-9830-4bc5-bfbb-bae2f73a13cb" ParentLink="ServiceBody_Statement" LowerBound="36.1" HigherBound="84.1">
+                    <om:Property Name="Expression" Value="true" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="LoopInfinite" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Scope" OID="e768a8c2-242f-4868-9360-3042c11872b0" ParentLink="ComplexStatement_Statement" LowerBound="39.1" HigherBound="69.1">
+                        <om:Property Name="InitializedTransactionType" Value="True" />
+                        <om:Property Name="IsSynchronized" Value="False" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Scope_try" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="1ad7395b-69de-4ed1-b1cc-2a63fc385129" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="49.1">
+                            <om:Property Name="Expression" Value="if ((System.Boolean) xpath(MsgIn, &quot;string(/*[local-name()='Root' and namespace-uri()='http://Singleton.POIn']/*[local-name()='IsException' and namespace-uri()=''])&quot;) == true)&#xD;&#xA;{&#xD;&#xA;    throw new System.Exception(&quot;The message has exception flag.&quot;);&#xD;&#xA;}" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Expression_IsException" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Construct" OID="e6118d39-d647-49d3-8d11-819ef61a142e" ParentLink="ComplexStatement_Statement" LowerBound="49.1" HigherBound="56.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMessage_MsgOut" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageAssignment" OID="286de9ab-6f45-4057-b982-db8cf0e7ff2b" ParentLink="ComplexStatement_Statement" LowerBound="52.1" HigherBound="55.1">
+                                <om:Property Name="Expression" Value="MsgOut = MsgIn;&#xD;&#xA;MsgOut(*) = MsgIn(*);" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="c9f8c5f0-9e74-4992-ba21-424519ec2059" ParentLink="Construct_MessageRef" LowerBound="50.35" HigherBound="50.41">
+                                <om:Property Name="Ref" Value="MsgOut" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Send" OID="bb430472-3267-41a2-9b6b-35d973d6c5d0" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="58.1">
+                            <om:Property Name="PortName" Value="PortSnd" />
+                            <om:Property Name="MessageName" Value="MsgOut" />
+                            <om:Property Name="OperationName" Value="Operation_1" />
+                            <om:Property Name="OperationMessageName" Value="Request" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="SendPOOut" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                        <om:Element Type="Catch" OID="41a267ac-4f45-4f34-a4af-4f876ea16a65" ParentLink="Scope_Catch" LowerBound="61.1" HigherBound="67.1">
+                            <om:Property Name="ExceptionName" Value="ex" />
+                            <om:Property Name="ExceptionType" Value="System.Exception" />
+                            <om:Property Name="IsFaultMessage" Value="False" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="SystemExceptionCatch" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="VariableAssignment" OID="2e514450-2197-44ba-8fc0-50d4021e6fcf" ParentLink="Catch_Statement" LowerBound="64.1" HigherBound="66.1">
+                                <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;SingletonApp&quot;, &quot;Exception Error: &quot; + ex.Message);" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Expression_log" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="Listen" OID="c8b7dedd-19c4-471d-89a6-a21243627088" ParentLink="ComplexStatement_Statement" LowerBound="69.1" HigherBound="83.1">
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Listen_1" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="ListenBranch" OID="e538c7de-9fd8-44e5-8c51-000f39a443d6" ParentLink="ReallyComplexStatement_Branch" LowerBound="69.1" HigherBound="69.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_1" />
+                            <om:Property Name="Signal" Value="False" />
+                            <om:Element Type="Receive" OID="2a4f5302-4d8e-47b2-ba9d-aa601ad526e8" ParentLink="ListenBranch_Statement" LowerBound="72.1" HigherBound="73.79">
+                                <om:Property Name="Activate" Value="False" />
+                                <om:Property Name="PortName" Value="PortRcv" />
+                                <om:Property Name="MessageName" Value="MsgIn" />
+                                <om:Property Name="OperationName" Value="Operation_1" />
+                                <om:Property Name="OperationMessageName" Value="Request" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="ReceiveCovoy" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="ListenBranch" OID="23facc12-127c-4e48-8f60-3a6ed5c0e91e" ParentLink="ReallyComplexStatement_Branch" LowerBound="69.1" HigherBound="69.1">
+                            <om:Property Name="IsGhostBranch" Value="True" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ListenBranch_2" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="Terminate" OID="a03b82f3-e726-4f44-8142-169c8ec72090" ParentLink="ComplexStatement_Statement" LowerBound="79.1" HigherBound="81.1">
+                                <om:Property Name="ErrorMessage" Value="&quot;Convoy terminated because no new messages received&quot;;" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="TermConvoy" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="Delay" OID="f1b54870-181e-422b-928c-7f02fae16eef" ParentLink="ListenBranch_Statement" LowerBound="76.1" HigherBound="77.58">
+                                <om:Property Name="Timeout" Value="new System.TimeSpan(0,0,0,10)" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Delay_10s" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="3469dbec-f9df-48da-acb3-60a1175a120b" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="25.1" HigherBound="27.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Singleton.PortType_Rcv" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PortRcv" />
+                <om:Property Name="Signal" Value="True" />
+                <om:Element Type="LogicalBindingAttribute" OID="2712716b-9e4f-41d4-9e40-0f7b7c2a6f26" ParentLink="PortDeclaration_CLRAttribute" LowerBound="25.1" HigherBound="26.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="40dee888-f661-4a26-b2f7-8809e6c97247" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="27.1" HigherBound="29.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="Singleton.PortType_SndPO" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PortSnd" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="07669093-da5e-4482-b773-b7399cf0ae04" ParentLink="PortDeclaration_CLRAttribute" LowerBound="27.1" HigherBound="28.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module Singleton
+{
+    internal porttype PortType_Rcv
+    {
+        oneway Operation_1
+        {
+            POIn
+        };
+    };
+    internal porttype PortType_SndPO
+    {
+        oneway Operation_1
+        {
+            POIn
+        };
+    };
+    internal correlationtype CorrelationTypeRcvPort
+    {
+        BTS.ReceivePortName
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service Convoy
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_Rcv PortRcv;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port uses PortType_SndPO PortSnd;
+        correlation CorrelationTypeRcvPort CorrelationSet;
+        message POIn MsgIn;
+        message POIn MsgOut;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3af22ab9-3d67-49e2-a3cf-f109b25b0270")]
+            activate receive (PortRcv.Operation_1, MsgIn, initialize CorrelationSet);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("41169341-9830-4bc5-bfbb-bae2f73a13cb")]
+            while (true)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("e768a8c2-242f-4868-9360-3042c11872b0")]
+                scope
+                {
+                    body
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("1ad7395b-69de-4ed1-b1cc-2a63fc385129")]
+                        if ((System.Boolean) xpath(MsgIn, "string(/*[local-name()='Root' and namespace-uri()='http://Singleton.POIn']/*[local-name()='IsException' and namespace-uri()=''])") == true)
+                        {
+                            throw new System.Exception("The message has exception flag.");
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("e6118d39-d647-49d3-8d11-819ef61a142e")]
+                        construct MsgOut
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("286de9ab-6f45-4057-b982-db8cf0e7ff2b")]
+                            MsgOut = MsgIn;
+                            MsgOut(*) = MsgIn(*);
+                        }
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("bb430472-3267-41a2-9b6b-35d973d6c5d0")]
+                        send (PortSnd.Operation_1, MsgOut);
+                    }
+                    exceptions
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("41a267ac-4f45-4f34-a4af-4f876ea16a65")]
+                        catch (System.Exception ex)
+                        {
+                            [Microsoft.XLANGs.BaseTypes.DesignerPosition("2e514450-2197-44ba-8fc0-50d4021e6fcf")]
+                            System.Diagnostics.EventLog.WriteEntry("SingletonApp", "Exception Error: " + ex.Message);
+                        }
+                    }
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c8b7dedd-19c4-471d-89a6-a21243627088")]
+                listen
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("2a4f5302-4d8e-47b2-ba9d-aa601ad526e8")]
+                    until receive (PortRcv.Operation_1, MsgIn, CorrelationSet)
+                    {
+                    }
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f1b54870-181e-422b-928c-7f02fae16eef")]
+                    timeout new System.TimeSpan(0,0,0,10)
+                    {
+                        [Microsoft.XLANGs.BaseTypes.DesignerPosition("a03b82f3-e726-4f44-8142-169c8ec72090")]
+                        terminate "Convoy terminated because no new messages received";;
+                    }
+                }
+            }
+        }
+    }
+}
+
